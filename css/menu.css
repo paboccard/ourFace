@@ -1,0 +1,46 @@
+div{
+	border: 1px solid black;
+	background-color: #51E26D;
+}
+
+h2{
+	background-color: yellow;
+	color: blue;
+}
+
+a:visited{
+	color: blue;
+}
+
+a{
+	text-decoration: none;
+}
+
+ul {
+ 	padding:0;
+ 	margin:0;
+ 	list-style-type:none;
+}
+
+li {
+	margin-left:2px;
+ 	float:left; /*pour IE*/
+}
+
+ul li a {
+ 	display:block;
+ 	float:left;   
+ 	width:100px;
+ 	background-color:#6495ED;
+ 	color:black;
+ 	text-decoration:none;
+ 	text-align:center;
+ 	padding:5px;
+ 	border:2px solid;
+ 	border-color:#DCDCDC #696969 #696969 #DCDCDC;
+}
+
+ul li a:hover {
+ 	background-color:#D3D3D3;
+ 	border-color:#696969 #DCDCDC #DCDCDC #696969;
+} 

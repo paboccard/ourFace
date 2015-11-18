@@ -1,0 +1,56 @@
+body
+{
+	padding:0px;
+}
+header
+{
+}
+#corps
+{
+
+}
+#listeAmi
+{
+	position: fixed;
+	height: 100%;
+	min-width: 80px !important;
+	background-color: #798081;
+	z-index: 1;
+	margin-top: -20px;
+	padding-top: 10px;
+	right:0px;
+}
+.label
+{
+	padding: 40px !important;
+}
+.friendPicture
+{
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	max-width: 50px;
+	left:0px;
+
+}
+#friend
+{
+	position: relative;
+	height: 70px;
+	width: 50%;
+	min-width:80px;
+	margin: 10px -10px 25px 0;
+}
+#friend span
+{
+	float: left;
+}
+#chat
+{
+	bottom: 10px;
+	right: 0px;
+}
+footer
+{
+
+}
