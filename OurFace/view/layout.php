@@ -8,6 +8,12 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
 	<!-- end include Css -->
+
+	<!-- include Javascript-->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<!-- end Javascript -->
 	<meta charset="utf-8">
 	<title>OurFace</title>
    
@@ -41,37 +47,20 @@
 	</header>
 
 <div class="container-fluid">
-	<div class="row">
-	<div id="corps">
-		<div id="listeAmi" class="col-md-2 col-xs-1">
-			<div id="friend" class="col-md-2 .col-sm-0">
+	<div id="corps"  class="row">
+		<div id="listeAmi" class="col-xs-offset-10 col-md-offset-10">
+			<div id="friend" class="row friends">
 				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
 				<span class="friendName">Araud quentin</span>
 			</div>
-			<div id="friend" class="col-md-2 col-xs-1">
+			<div id="friend2" class="row friends">
 				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-				<span class="friendName">Araud Quentin</span>
+				<span class="friendName">Pierre-Alexis Boccard</span>
 			</div>
-			<div id="friend" class="col-md-2 col-xs-1">
-				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-				<span class="friendName">Araud quentin</span>
-			</div>
-			<div id="friend" class="col-md-2 col-xs-1">
-				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-				<span class="friendName">Araud quentin</span>
-			</div>
-			<div id="friend" class="col-md-2 col-xs-1">
-				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-				<span class="friendName">Araud quentin</span>
-			</div>
+		</div>
 
-			</div>
 	</div>
-				<!--     chat   Quentin araud
-				<div id="chat">
-					<input type="text" class="col-md-2" placeholder="Parle!!!" name="q">
-				</div>
-				     fin chat    -->
+
 
 
 			<!-- *****************  MUR Pierre-alexis Boccard  ******** -->
@@ -119,7 +108,6 @@
 	        </div>	
 		</div>
 
-	</div>
 	</div>
 
 
