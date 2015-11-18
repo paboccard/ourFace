@@ -79,10 +79,6 @@
 			<div class="col-md-offset-2 col-md-4">
 				<form role="form" >
 					<div class="form-group">
-						<div>
-							<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-							<span class="friendName">Araud quentin</span>
-						</div>
 						<textarea class="form-control" rows="5">Entrez votre message</textarea>
 						<div class="col-md-offset-6 col-md-6 cancel-padding">
 							<div class="btn-group btn-group-justified" role="group">
@@ -107,7 +103,7 @@
 							<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
 							<span class="friendName">Araud quentin</span>
 						</div>
-						<textarea class="form-control" rows="5">Entrez votre message</textarea>
+						<textarea class="form-control" rows="5">J'ai une tête de yonf</textarea>
 						<div class="col-md-offset-6 col-md-6 cancel-padding">
 							<div class="btn-group btn-group-justified" role="group">
 								<div class="btn-group">
