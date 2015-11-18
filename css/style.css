@@ -1,9 +1,11 @@
 body
 {
-	padding:0px;
+	padding:0;
+	background-color: #E6E6E6 !important;
 }
 header
 {
+	margin: 0 !important;
 }
 #corps
 {
@@ -50,6 +52,21 @@ header
 	bottom: 10px;
 	right: 0px;
 }
+
+textarea {
+   resize: none;
+}
+
+.col-md-offset-6.col-md-6.cancel-padding {
+    padding: 0;
+}
+
+.area{
+	margin-top: 20px; 
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
 footer
 {
 

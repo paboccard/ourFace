@@ -40,7 +40,9 @@
 		</nav>
 	</header>
 
-	<div id="corps"  class="row">
+<div class="container-fluid">
+	<div class="row">
+	<div id="corps">
 		<div id="listeAmi" class="col-md-2 col-xs-1">
 			<div id="friend" class="col-md-2 .col-sm-0">
 				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
@@ -48,7 +50,7 @@
 			</div>
 			<div id="friend" class="col-md-2 col-xs-1">
 				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-				<span class="friendName">Araud quentin</span>
+				<span class="friendName">Araud Quentin</span>
 			</div>
 			<div id="friend" class="col-md-2 col-xs-1">
 				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
@@ -64,31 +66,68 @@
 			</div>
 
 			</div>
-				<!--     chat   Quentin araud -->
+	</div>
+				<!--     chat   Quentin araud
 				<div id="chat">
 					<input type="text" class="col-md-2" placeholder="Parle!!!" name="q">
 				</div>
-				<!--     fin chat    -->
+				     fin chat    -->
 
 
 			<!-- *****************  MUR Pierre-alexis Boccard  ******** -->
-		<div class="row">
-			<div class="col-md-7 col-md-offset-3">
+		<div class="row area">
+			<div class="col-md-offset-2 col-md-4">
 				<form role="form" >
 					<div class="form-group">
-						<textarea class="form-cotnrol" rows="5">Entrez votre message</textarea>
-						<div class="input-group-btn">
-	                        <button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-file"></span>Joindre</button>
-	                    </div>
-						<div class="input-group-btn">
-	                        <button class="btn btn-default btn-primary" type="submit"><i class="">Publier</i></button>
-	                    </div>
+						<div>
+							<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
+							<span class="friendName">Araud quentin</span>
+						</div>
+						<textarea class="form-control" rows="5">Entrez votre message</textarea>
+						<div class="col-md-offset-6 col-md-6 cancel-padding">
+							<div class="btn-group btn-group-justified" role="group">
+								<div class="btn-group">
+									<button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-file"></span> Joindre</button>
+								</div>
+			                    <div class="btn-group">
+			                		<button class="btn btn-default btn-primary" type="submit"><i class="">Publier</i></button>
+			                 	</div>
+			                </div>
+						</div>
 					</div>
 				</form>	
-			</div>
-		</div>	
+	        </div>	
+		</div>
+
+		<div class="row area">
+			<div class="col-md-offset-2 col-md-4">
+				<form role="form" >
+					<div class="form-group">
+						<div>
+							<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
+							<span class="friendName">Araud quentin</span>
+						</div>
+						<textarea class="form-control" rows="5">Entrez votre message</textarea>
+						<div class="col-md-offset-6 col-md-6 cancel-padding">
+							<div class="btn-group btn-group-justified" role="group">
+								<div class="btn-group">
+									<button class="btn btn-default btn-success" type="submit"><span class="glyphicon glyphicon-file"></span> Joindre</button>
+								</div>
+			                    <div class="btn-group">
+			                		<button class="btn btn-default btn-primary" type="submit"><i class="">Publier</i></button>
+			                 	</div>
+			                </div>
+						</div>
+					</div>
+				</form>	
+	        </div>	
+		</div>
 
 	</div>
+	</div>
+
+
+
 
 
 
