@@ -53,8 +53,12 @@ textarea {
    resize: none;
 }
 
-.col-md-offset-6.col-md-6.cancel-padding {
+.col-md-offset-5.col-md-7.cancel-padding {
     padding: 0;
+}
+
+.col-md-2.cancel-padding{
+	padding: 0;
 }
 
 .area{
