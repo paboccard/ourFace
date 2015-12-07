@@ -1,2 +1,9 @@
-C'est l'action par défaut ! 
-<a href=ourFace.php?action=logout>Deconnectez vous !</a>
+
+<?php 
+if (isset($_SESSION['pseudo']))
+	include('wallSuccess.php'); 
+else{
+	echo '<p>Vous n\'êtes pas connecté !</p>' ;
+	echo '<a href=ourFace.php?action=logout>Vonnectez vous !</a>';
+}
+?>
