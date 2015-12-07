@@ -12,23 +12,23 @@ class message{
 	public $id;
 
 	/** @emetteur @Column(type="integer") */ 
-	//public $emetteur;
+	public $emetteur;
 		
 	/** @destinataire @Column(type="integer") */ 
-	//public $destinataire;
+	public $destinataire;
 
 	/** @parent @Column(type="integer") */ 
-	//public $parent;
+	public $parent;
 
 	/** @post @Column(type="integer") */ 
-	//public $post;
+	public $post;
 
 	/** @aime @Column(type="integer") */ 
-	//public $aime;
+	public $aime;
 
-	public function getUtilisateur(){
+	/*public function getUtilisateur(){
 		return this->id;
-	}
+	}*/
 	
 }
 

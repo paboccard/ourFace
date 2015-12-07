@@ -33,8 +33,10 @@ public static function login($request,$context){
 		
 	if (!empty($_POST['pseudo']) && !empty($_POST['pass'])){
 		try{
-			if ($login = utilisateurTable::getUserByLoginAndPass($_POST['pseudo'],$_POST['pass']))
-				return context::NONE;
+			if ($login = utilisateurTable::getUserByLoginAndPass($_POST['pseudo'],$_POST['pass'])){
+				$_SESSION['pseudo'] = $_POST['pseudo'];
+				return context::SUCCESS;
+			}
 			else 
 				return context::ERROR;
 		}catch (Exception $e){
@@ -42,7 +44,16 @@ public static function login($request,$context){
 		}
 	}
 	else 
+		return context::NONE;
+}
+
+public static function callLogin($request,$context){		
+	if (isset($_SESSION['pseudo']))
 		return context::SUCCESS;
+	else{
+		session_unset ();
+		return context::SUCCESS;
+	}
 }
 
 public static function profile($request,$context){
