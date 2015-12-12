@@ -1,2 +1,8 @@
-C'est l'action par défaut ! 
-<a href=monApplication.php?action=logout>Deconnectez vous !</a>
+
+<?php 
+if (isset($_SESSION['pseudo']))
+	include('wallSuccess.php'); 
+else{
+	include('callLoginSuccess.php');
+}
+?>

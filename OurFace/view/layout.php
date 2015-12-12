@@ -21,32 +21,32 @@
 
 <body>
 
-	<?php include('header.php'); ?>
+
+	<?php 
+	if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo']))
+		include('headerConnect.php'); 
+	else
+		include('headerNoConnect.php'); ?>
+
 
 	<div class="container-fluid">
 		<div  class="row">
 
-				<!-- *****************  MUR Pierre-alexis Boccard  ******** -->
-			<?php include('wall.php'); ?>
 
-				<!-- *****************  Liste Amis Quentin Araud  ******** -->
-			<div id="corps" class="col-md-2 cancel-padding">
-				<div id="listeAmi" class="">
-					<div id="friend" class="row friends">
-						<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-						<span class="friendName">Araud quentin</span>
-					</div>
-					<div id="friend2" class="row friends">
-						<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-						<span class="friendName">Pierre-Alexis Boccard</span>
-					</div>
-				</div>
-			</div>
+			<?php 
+				if (isset($_SESSION['pseudo']))
+					include('listFriend.php'); 
+			?>
+			<?php include($template_view); ?>
+
+
 		</div>
 	</div>
 
-	<footer>
-	</footer>
+	<?php 
+		if (isset($_SESSION['pseudo']))
+			include('footer.php'); ?>
+
 
 </body>
 </html>

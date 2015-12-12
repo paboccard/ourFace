@@ -8,6 +8,7 @@ class utilisateur{
 
 	/** @Id @Column(type="integer")
 	 *  @GeneratedValue
+	 *	@OneToMany(targetEntity="message")
 	 */ 
 	public $id;
 
@@ -31,6 +32,13 @@ class utilisateur{
 
 	/** @Column(type="datetime", length=4000) */ 
 	public $date_de_naissance;
+
+	/**
+     * @return ArrayCollection $message
+     */
+	public function getMessages(){
+		return $this->id;
+	}
 	
 }
 

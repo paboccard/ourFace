@@ -1,7 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+
 body
 {
 	padding:0;
-	background-color: #E6E6E6 !important;
+	background-color: #eee !important;
+	font: normal 14px Roboto,arial,sans-serif !important;
+
 }
 header
 {
@@ -9,10 +13,14 @@ header
 }
 #corps
 {
+	background-color: #798081;
 
 }
+
 #listeAmi
 {
+	position: fixed;
+	min-height:100%; 
 	height: 100%;
 	min-width: 80px !important;
 	background-color: #798081;
@@ -20,14 +28,49 @@ header
 	margin-top: -20px;
 	padding-top: 10px;
 }
+#search-friend
+{
+	position: absolute;
+	bottom: 50px;
+}
+#chat
+{
+	padding: 0;
+	border: 0px solid black;
+	height: 400px !important;
+}
+#chat-text
+{
+	margin-top: -300px;
+	position: relative;
+	border: 1px solid #798081;
+	height: 300px;
+	background-color: white;
+}
+#text-chat-perso
+{
+	height: 100%;
+	overflow: scroll;
+	padding: 5px;
+}
+.pictureWall
+{
+	width: 75px;
+}
+.input-chat
+{
+	position: relative;
+	width: 150px !important;
+	
+}
 .label
 {
 	padding: 40px !important;
 }
 .friendPicture
 {
-	/*position: relative;
-	float: left;*/
+	position: relative;
+	float: left;
 	margin: 5px 0 0 25px;
 	max-width: 30px;
 	left:0px;
@@ -35,13 +78,21 @@ header
 }
 .friends
 {
-	width: 100%;
+	height: 100%;
 	margin: 10px;
 }
 .friends span
 {
-	/*float: left;*/
+	float: left;
 	margin: 15px 0 0 5px;
+}
+#rechercheFriend
+{
+	margin-left: 1px;
+}
+#rechercheFriend input
+{
+	width: 140px;
 }
 #chat
 {
@@ -50,24 +101,100 @@ header
 }
 
 textarea {
-   resize: none;
+	resize: none;
+	margin: 0 auto;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf !important;
 }
 
-.col-md-offset-5.col-md-7.cancel-padding {
-    padding: 0;
+.area{
+	margin-top: 20px; 
 }
 
 .col-md-2.cancel-padding{
 	padding: 0;
 }
 
-.area{
-	margin-top: 20px; 
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+#picture-wall
+{
+	padding: 3px;
+	background-color: white;
+	height: 200px;
 }
-
+#picture-wall img
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+#change-picture
+{
+	position: absolute;
+	display: none;
+	opacity: 1 !important;
+	background-color: transparent;
+	height: 30px;
+	z-index: 4;
+}
+#name-wall
+{
+	background-color: transparent;
+	height: 200px;
+	padding: 10px;
+}
 footer
 {
-
+	position: fixed;
+	width: 90%;
+	height: 38px;
+	border: 0px solid black;
+	bottom: 0;
+	background-color: blue;
+	padding: 5px;
 }
+
+/******** CONNEXION *******/
+.container {
+    padding: 25px;
+}
+
+.form-login {
+	max-width: 380px;
+	margin: 0 auto;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ 	border:0 solid #eee; 
+ 	border-bottom-width:1px;
+ 	padding-bottom:10px;
+ 	text-align: center;
+ 	font-size: 24px !important;
+}
+
+.form-control {
+	font-size: 15px !important;
+    border-radius: 10px;
+}
+
+.chat-input{
+	height: 40px !important;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+
+
