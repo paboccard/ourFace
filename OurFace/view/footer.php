@@ -1,4 +1,5 @@
-<footer class="container-fluid">
+<footer class="footer">
+	<div class="container cancel-padding">
 	<div id="chat" class="col-md-offset-8 col-md-3">
 
 		<div id="chat-text">
@@ -34,6 +35,6 @@
                 </div>
             </div>
         </form>
-		
+       	</div>
 	</div>
 </footer>

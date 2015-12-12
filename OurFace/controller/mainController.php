@@ -58,11 +58,16 @@ public static function callLogin($request,$context){
 	}
 }
 
-public static function profile($request,$context){
-		if ($msg = messageTable::getMessageById('pierre-alexis'))
-			return context::NONE;
+public static function myWall($request,$context){
+	if (!empty($request['profile'])){
+		$context->profile=$request['profile'];
+		if ($msg = utilisateurTable::getUserByIdentifiant($context->profile))
+			return context::SUCCESS;
 		else
 			return context::ERROR;
+	}
+	else
+		return context::ERROR;
 }
 
 }

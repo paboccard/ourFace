@@ -30,7 +30,19 @@ public static function getUserById($id){
 	return $user; 
 }
 
-public static function getUsers(){
+public static function getUserByIdentifiant($identifiant){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$userRepository = $em->getRepository('utilisateur');
+	$user = $userRepository->findOneBy(array('identifiant' => $identifiant));	
+	
+	if ($user == false){
+		echo 'Erreur sql';
+	}
+	return $user; 
+}
+
+public static function getAllUsers(){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
 	$userRepository = $em->getRepository('utilisateur');

@@ -28,25 +28,29 @@
 	else
 		include('headerNoConnect.php'); ?>
 
+	<?php if (!isset($_SESSION['pseudo'])){ ?>
+		<div class="container col-lg-12 col-md-12 col-xs-12">
+	<?php } else{ ?>
+		<div class="container col-lg-10 col-md-10 col-xs-10">
+			<div class="jumbotron">
 
-	<div class="container-fluid">
-		<div  class="row">
+	<?php }?>
 
-
-			<?php 
-				if (isset($_SESSION['pseudo']))
-					include('listFriend.php'); 
-			?>
 			<?php include($template_view); ?>
-
-
-		</div>
-	</div>
-
-	<?php 
-		if (isset($_SESSION['pseudo']))
+			<?php 
+			if (isset($_SESSION['pseudo']))
 			include('footer.php'); ?>
-
+		</div>
+</div>			
+			<?php 
+				if (isset($_SESSION['pseudo'])){ ?>
+					<div class="container col-lg-2 col-md-2 col-xs-2 cancel-padding">
+						<div class="jumbotron">
+					<?php 
+					include('listFriend.php');} 
+			?>
+		</div>
+		</div>
 
 </body>
 </html>
