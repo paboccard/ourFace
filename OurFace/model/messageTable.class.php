@@ -19,13 +19,16 @@ class messageTable{
 public static function getAllMessage(){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
+	//$post = $em->createQuery("select m from message m");
+
 	$msgRepository = $em->getRepository('message');
 	$msg = $msgRepository->findAll();	
 	
 	if ($msg == false){
 		echo 'Erreur sql';
 	}
-	return $msg; 
+
+	return $msg;
 }
 
 

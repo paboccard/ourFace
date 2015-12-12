@@ -1,6 +1,6 @@
 <div class="col-md-10">
 	<div class="row area">
-		<div class="col-md-offset-4 col-md-6">
+		<div class="col-md-offset-4 col-md-6 ">
 			<form role="form" >
 				<div class="form-group">
 					<textarea class="form-control" rows="5">Exprimez-vous...</textarea>
@@ -20,9 +20,10 @@
 	</div>
 
 	<?php 
-	if ($msg = postTable::getAllPost()){
+	if ($msg = messageTable::getAllMessage()){
 		foreach ($msg as $key) { 
 	//for ($i = 1; $i <= 10; $i++) { 
+
 	?> 
 			<div class="row area">
 				<div class="col-md-offset-4 col-md-6">
@@ -30,9 +31,9 @@
 					<div class="form-group">
 						<div>
 							<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
-							<span id="friend" class="friendName"><?php $key->id;?></span>
+							<span id="friend" class="friendName"><?php echo utilisateurTable::getUserById($key->getEmetteur())->getIdentifiant() ; ?></span>
 						</div>
-						<textarea readonly class="form-control" rows="5"><?php $key->texte;?></textarea>
+						<textarea readonly class="form-control" rows="5"><?php echo postTable::getPostById($key->getPost())->getTexte() ;?></textarea>
 							<div class="col-md-offset-5 col-md-7 cancel-padding">
 								<div class="btn-group btn-group-justified" role="group">
 									<div class="btn-group">
