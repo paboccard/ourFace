@@ -45,4 +45,11 @@ public static function login($request,$context){
 		return context::SUCCESS;
 }
 
+public static function profile($request,$context){
+		if ($msg = messageTable::getMessageById('pierre-alexis'))
+			return context::NONE;
+		else
+			return context::ERROR;
+}
+
 }
