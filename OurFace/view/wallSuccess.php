@@ -1,6 +1,6 @@
 <div class="col-md-10">
 	<div class="row area">
-		<div class="col-md-offset-4 col-md-6 ">
+		<div class="col-md-offset-4 col-md-6">
 			<form role="form" >
 				<div class="form-group">
 					<textarea class="form-control" rows="5">Exprimez-vous...</textarea>
