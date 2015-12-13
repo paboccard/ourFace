@@ -7,31 +7,71 @@ body
 	font: normal 14px Roboto,arial,sans-serif !important;
 
 }
-header
-{
-	margin: 0 !important;
+
+.row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
+
 #corps
 {
 	background-color: #798081;
 
 }
 
-#listeAmi
+.container_header{
+	padding: 0px !important;
+}
+
+.listeFriend
 {
+	/*position: relative;
+	float: right;*/
 	position: fixed;
 	min-height:100%; 
 	height: 100%;
-	min-width: 80px !important;
+	min-width: 20% !important;
 	background-color: #798081;
-	z-index: 1;
-	margin-top: -20px;
-	padding-top: 10px;
+	/*z-index: 1;
+	margin-top: -20px;*/
+	/*padding-top: 10px;*/
 }
+
+.friendPicture
+{
+	position: relative;
+	float: left;
+	margin: 5px 0 0 0px;
+	max-width: 30px;
+	left:0px;
+
+}
+.friends
+{
+	margin: 10px;
+}
+.friends span
+{
+	float: left;
+	margin: 15px 0 0 5px;
+}
+#rechercheFriend
+{
+	margin-left: 1px;
+}
+#rechercheFriend input
+{
+	width: 140px;
+}
+
+.friendName{
+	padding: 0px !important;
+}
+
 #search-friend
 {
-	position: absolute;
-	bottom: 50px;
+	position: fixed;
+	bottom: 0px;
 }
 #chat
 {
@@ -67,50 +107,53 @@ header
 {
 	padding: 40px !important;
 }
-.friendPicture
-{
-	position: relative;
-	float: left;
-	margin: 5px 0 0 25px;
-	max-width: 30px;
-	left:0px;
 
-}
-.friends
-{
-	height: 100%;
-	margin: 10px;
-}
-.friends span
-{
-	float: left;
-	margin: 15px 0 0 5px;
-}
-#rechercheFriend
-{
-	margin-left: 1px;
-}
-#rechercheFriend input
-{
-	width: 140px;
-}
 #chat
 {
 	bottom: 10px;
 	right: 0px;
 }
 
+.btn-msg{
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.msg-color-com{
+	color : #0457d3;
+}
+
+.msg-color-insert{
+	color : #d44e64;
+}
+
+.msg-color-like{
+	color : #9278f9;
+}
+
 textarea {
 	resize: none;
 	margin: 0 auto;
-    border-radius: 15px;
+	width:100%;
+	padding-top: 10px;
+    /*border-radius: 15px;
     border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf !important;
+    /*border-width: 1px;*/
+    border : 0px solid white;
+    /*box-shadow:0 1px 0 #cfcfcf !important;*/
 }
 
-.area{
-	margin-top: 20px; 
+.box {
+    color:#000;
+    /*margin:40px auto;*/
+    padding:20px;
+    padding-bottom: 40px;
+    /*width:500px*/;
+    /*height:100%;*/
+    background:#fff;
+    border-radius:3px;
+    box-shadow:0 2px #cfcfcf;
 }
 
 .col-md-2.cancel-padding{
@@ -145,17 +188,36 @@ textarea {
 	height: 200px;
 	padding: 10px;
 }
-
 footer
 {
 	position: fixed;
-	width: 90%;
+	width: 100%;
 	height: 38px;
 	border: 0px solid black;
 	bottom: 0;
-	background-color: blue;
+	/*background-color: blue;*/
 	padding: 5px;
 }
+
+.scrollable {
+    height: 100%;
+    overflow: auto;
+}
+
+.max-height {
+    height: 100%;
+	/*position: relative;*/
+}
+
+.area{
+	margin-top: 30px;
+}
+
+.cancel-padding{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
 
 /******** CONNEXION *******/
 .container {
@@ -173,7 +235,7 @@ footer
     border-radius: 15px;
     border-color:#d2d2d2;
     border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
+    box-shadow:0 1px #cfcfcf;
 }
 
 h4 { 
@@ -196,3 +258,6 @@ h4 {
 .wrapper {
     text-align: center;
 }
+
+
+
