@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <header class"min-height">
 	<nav class="navbar navbar-blue navbar-fixed-top">
 	  <div class="container container_header">
