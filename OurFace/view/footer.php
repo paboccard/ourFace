@@ -1,11 +1,10 @@
 <div class="col-lg-12">
-	<div class="row">
 		<div class="footer-search cancel-padding">
-	<div id="chat" class="col-md-offset-8 col-md-3">
+			<div id="chat" class="col-md-offset-8 col-md-3">
 
-		<div id="chat-text">
+				<div id="chat-text">
 			
-			<div id="text-chat-perso">
+					<div id="text-chat-perso">
 				Q Araud: Bonjour <br>
 				P.A Boccard: bonjour<br>
 				Q Araud: ca va?<br>
@@ -38,5 +37,4 @@
         </form>
        	</div>
        </div>
-</div>
 </div>
