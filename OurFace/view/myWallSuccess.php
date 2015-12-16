@@ -1,6 +1,8 @@
 <?php 
 	$user = utilisateurTable::getUserByIdentifiant($context->profile);
+
 	$id = $user->getId();
+
 	$identifiant = $user->getIdentifiant();
 	$name = $user->getNom();
 	$prenom = $user->getPrenom();
@@ -36,5 +38,6 @@
 			} 
 		} 
 	?>
+
 	</div>
 </div>
