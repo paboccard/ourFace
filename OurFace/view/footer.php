@@ -1,4 +1,6 @@
-<footer class="container-fluid">
+<div class="col-lg-12">
+	<div class="row">
+		<div class="footer-search cancel-padding">
 	<div id="chat" class="col-md-offset-8 col-md-3">
 
 		<div id="chat-text">
@@ -24,7 +26,7 @@
 			</div>
 		</div>
 
-		<form class="navbar-form" role="search">
+		<form class="navbar-form pull-right" role="search">
 			<img src="images/croix.png" alt="oui" id="exit-chat" class="img-rounded ">
             <div class="input-group form-group-sm">
 
@@ -34,6 +36,7 @@
                 </div>
             </div>
         </form>
-		
-	</div>
-</footer>
+       	</div>
+       </div>
+</div>
+</div>

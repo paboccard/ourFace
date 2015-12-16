@@ -23,30 +23,35 @@
 
 
 	<?php 
-	if (isset($_SESSION['pseudo']))
+	if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo']))
 		include('headerConnect.php'); 
 	else
 		include('headerNoConnect.php'); ?>
 
+	<?php if (!isset($_SESSION['pseudo'])){ ?>
+		<div class="container-fluid cancel-padding min-padding">
+	<?php } else{ ?>
+		<div class="container-fluid cancel-padding min-padding">
+			<div class="col-lg-10 col-md-10 col-xs-10 cancel-padding">
 
-	<div class="container-fluid">
-		<div  class="row">
+	<?php }?>
 
-
-			<?php 
-				if (isset($_SESSION['pseudo']))
-					include('listFriend.php'); 
-			?>
 			<?php include($template_view); ?>
-
-
-		</div>
-	</div>
-
-	<?php 
-		if (isset($_SESSION['pseudo']))
+			<?php 
+			if (isset($_SESSION['pseudo']))
 			include('footer.php'); ?>
-
+		</div>
+			
+			<?php 
+				if (isset($_SESSION['pseudo'])){ ?>
+					<div class="col-lg-2 col-md-2 col-xs-2 cancel-padding">
+						<div class="">
+					<?php 
+					include('listFriend.php');} 
+			?>
+		</div>
+		</div>
+		</div>
 
 </body>
 </html>

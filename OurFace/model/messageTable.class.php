@@ -7,13 +7,40 @@ class messageTable{
   public static function getMessageById($id){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
-	$userRepository = $em->getRepository('message');
-	$msg = $userRepository->findBy(array('id' => $id));	
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findBy(array('id' => $id));	
 	
 	if ($msg == false){
 		echo 'Erreur sql';
 	}
 	return $msg; 
+}
+
+  public static function getMessageByEmetteur($emetteur){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findBy(array('emetteur' => $emetteur));	
+	
+	if ($msg == false){
+		echo 'Erreur sql';
+	}
+	return $msg; 
+}
+
+public static function getAllMessage(){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	//$post = $em->createQuery("select m from message m");
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findAll();	
+	
+	if ($msg == false){
+		echo 'Erreur sql';
+	}
+
+	return $msg;
 }
 
 

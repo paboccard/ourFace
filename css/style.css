@@ -1,33 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+
 body
 {
 	padding:0;
-	background-color: #E6E6E6 !important;
+	background-color: #eee !important;
+	font: normal 14px Roboto,arial,sans-serif !important;
+
 }
-header
-{
-	margin: 0 !important;
+
+.row{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
+
 #corps
 {
 	background-color: #798081;
 
 }
-#listeAmi
-{
-	position: fixed;
-	min-height:100%; 
-	height: 100%;
-	min-width: 80px !important;
-	background-color: #798081;
-	z-index: 1;
-	margin-top: -20px;
-	padding-top: 10px;
+
+.min-height: {
+	min-height: 50px;
 }
+
+.scrollable {
+    height: 100%;
+    overflow: auto;
+}
+
+.max-height {
+    height: 100%;
+	/*position: relative;*/
+}
+.cancel-padding{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.min-padding{
+	padding-top: 50px !important;
+}
+
+/********* HEADER ***********/
+.container_header{
+	padding: 0px !important;
+	min-height: 50px;
+}
+
+.navbar-blue{
+	background-color:#3B5999;
+}
+
+.navbar-blue a:link, .navbar-blue a:visited{
+	color: white
+}
+
+.navbar-blue a:hover{
+	color: #3B5999;
+}
+
+/******** Friend ********/
+
+.listeFriend
+{
+	min-width: 20%;
+	position: fixed;
+	height: 100%;
+	background-color: #393939;
+	/*background-color: #798081;*/
+	/*min-width: 20% !important;
+	min-width: 200px;
+	z-index: 1;*/
+}
+
+.friendPicture
+{
+	position: relative;
+	float: left;
+	margin: 5px 0 0 0px;
+	max-width: 30px;
+	left:0px;
+
+}
+.friends
+{
+	margin: 10px;
+}
+.friends span
+{
+	float: left;
+	margin: 15px 0 0 5px;
+}
+#rechercheFriend
+{
+	margin-left: 1px;
+}
+#rechercheFriend input
+{
+	width: 140px;
+}
+
+.friendName{
+	padding: 0px !important;
+}
+
+/*.friendName a:visited, .friendName a:link{
+	color: white;
+}*/
+
 #search-friend
 {
-	position: absolute;
-	bottom: 50px;
+	position: fixed;
+	bottom: 0px;
 }
+
+/******** CHAT ********/ 
 #chat
 {
 	padding: 0;
@@ -62,56 +148,67 @@ header
 {
 	padding: 40px !important;
 }
-.friendPicture
-{
-	position: relative;
-	float: left;
-	margin: 5px 0 0 25px;
-	max-width: 30px;
-	left:0px;
 
-}
-.friends
-{
-	height: 100%;
-	margin: 10px;
-}
-.friends span
-{
-	float: left;
-	margin: 15px 0 0 5px;
-}
-#rechercheFriend
-{
-	margin-left: 1px;
-}
-#rechercheFriend input
-{
-	width: 140px;
-}
 #chat
 {
 	bottom: 10px;
 	right: 0px;
 }
 
-textarea {
-   resize: none;
+/******** COMMENT *********/
+.btn-msg{
+	padding: 0;
+	border: none;
+	background: none;
 }
 
-.col-md-offset-5.col-md-7.cancel-padding {
-    padding: 0;
+.msg-color-com{
+	color : #0457d3;
+}
+
+.msg-color-insert{
+	color : #d44e64;
+}
+
+.msg-color-like{
+	color : #9278f9;
+}
+
+#status {
+	/*resize: none;*/
+	/*margin: 0 auto;*/
+	width:100%;
+	padding-left: 30px;
+	margin-left: 10px;
+    /*border-radius: 15px;
+    border-color:#d2d2d2;
+    /*border-width: 1px;*/
+    border : 0px solid white;
+    /*box-shadow:0 1px 0 #cfcfcf !important;*/
+}
+
+.separator{
+	margin-bottom: 20px;
+}
+
+.box {
+    color:#000;
+    /*margin:40px auto;*/
+    padding:20px;
+    padding-bottom: 40px;
+    /*width:500px*/;
+    /*height:100%;*/
+    background:#fff;
+    border-radius:3px;
+    box-shadow:0 2px #cfcfcf;
 }
 
 .col-md-2.cancel-padding{
 	padding: 0;
 }
 
-.area{
-	margin-top: 20px; 
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-}
+
+/********* PICTURE *********/
 #picture-wall
 {
 	padding: 3px;
@@ -140,13 +237,61 @@ textarea {
 	height: 200px;
 	padding: 10px;
 }
-footer
+
+.footer-search
 {
 	position: fixed;
 	width: 90%;
 	height: 38px;
 	border: 0px solid black;
 	bottom: 0;
-	background-color: blue;
+	/*background-color: blue;*/
 	padding: 5px;
 }
+
+.area{
+	padding-top: 40px;
+}
+
+/******** CONNEXION *******/
+.container {
+    padding: 25px;
+}
+
+.form-login {
+	max-width: 380px;
+	margin: 0 auto;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px #cfcfcf;
+}
+
+h4 { 
+ 	border:0 solid #eee; 
+ 	border-bottom-width:1px;
+ 	padding-bottom:10px;
+ 	text-align: center;
+ 	font-size: 24px !important;
+}
+
+.form-control {
+	font-size: 15px !important;
+    border-radius: 10px;
+}
+
+.chat-input{
+	height: 40px !important;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+
+
