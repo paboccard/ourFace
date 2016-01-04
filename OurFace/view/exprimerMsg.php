@@ -1,5 +1,5 @@
 <div class="row area">
-	<form role="form" action"publier.php" method="post">
+	<form role="form" action"" method="POST">
 		<div class="form-group">
 			<div class="box">
 			    <textarea id="status" class"form-control" name="myText" rows="5">Exprimez-vous...</textarea>
@@ -18,4 +18,9 @@
 			</div>
 		</div>
 	</form>	
+	<?php
+	if (isset($_POST['publier'])){
+		messageTable::publierMessage($_POST['myText'], $_SESSION['pseudo'], $identifiant);
+	}
+	?>
 </div>

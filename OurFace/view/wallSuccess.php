@@ -6,7 +6,6 @@
 	if (($msg = messageTable::getAllMessage()) != null){
 		foreach ($msg as $key) { 
 	//for ($i = 1; $i <= 10; $i++) { 
-
 		include('listMessages.php');
 
 

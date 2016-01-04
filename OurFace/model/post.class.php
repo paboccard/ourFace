@@ -35,6 +35,18 @@ class post{
 	public function getImage(){
 		return $this->image;
 	}
+
+	public function setTexte($texte){
+		$this->texte = $texte;
+	}
+
+	public function setDate($date){
+		$this->date = $date;
+	}
+
+	public function setImage($image){
+		$this->image = $image;
+	}
 }
 
 ?>

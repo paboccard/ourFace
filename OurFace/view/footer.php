@@ -37,4 +37,10 @@
         </form>
        	</div>
        </div>
+
+       	<?php
+		if (isset($_POST['like'])){
+			messageTable::setAime($_POST['idPost']);
+		}
+		?>
 </div>

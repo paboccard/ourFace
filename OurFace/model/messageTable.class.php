@@ -20,7 +20,8 @@ class messageTable{
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
 	$msgRepository = $em->getRepository('message');
-	$msg = $msgRepository->findBy(array('emetteur' => $emetteur));	
+	$msg = $msgRepository->findBy(array('emetteur' => $emetteur), array('id' => 'DESC'));	
+	$msg += $msgRepository->findBy(array('destinataire' => $emetteur), array('id' => 'DESC'));	
 	
 	if ($msg == false){
 		//echo 'Erreur sql';
@@ -34,7 +35,8 @@ public static function getAllMessage(){
 	//$post = $em->createQuery("select m from message m");
 
 	$msgRepository = $em->getRepository('message');
-	$msg = $msgRepository->findAll();	
+	$msg = $msgRepository->findBy(array(), array('id' => 'DESC'));
+	//$msg = $msgRepository->findAll();
 	
 	if ($msg == false){
 		echo 'Erreur sql';
@@ -51,13 +53,31 @@ public static function setAime($id){
 	$msgRepository = $em->getRepository('message');
 	$msg = $msgRepository->findOneBy(array('id' => $id));	
 
-	echo json_encode($msg);
-
-	$msg->setAime(); // just change the name
+	$msg->setAime();
 	//$em->persist($msg);
-	//$em->flush();
+	$em->flush();
 	return $msg;
 
+}
+
+public static function publierMessage($message, $emetteur, $destinataire){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$loginEmetteur = utilisateurTable::getUserByIdentifiant($emetteur);
+	$loginDestinataire = utilisateurTable::getUserByIdentifiant($destinataire);
+	$post = new post();
+	$post->setTexte($message);
+	$post->setDate(new DateTime());
+	$post->setImage(null);
+	$newMessage = new message();
+	$newMessage->setEmetteur($loginEmetteur);
+	$newMessage->setDestinataire($loginDestinataire);
+	$newMessage->setParent($loginEmetteur);
+	$newMessage->setPost($post);
+	$newMessage->setAime(-1);
+
+	$em->persist($newMessage);
+	$em->flush($newMessage);
 }
 
 
