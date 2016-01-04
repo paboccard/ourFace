@@ -23,7 +23,7 @@ class messageTable{
 	$msg = $msgRepository->findBy(array('emetteur' => $emetteur));	
 	
 	if ($msg == false){
-		echo 'Erreur sql';
+		//echo 'Erreur sql';
 	}
 	return $msg; 
 }
@@ -41,6 +41,23 @@ public static function getAllMessage(){
 	}
 
 	return $msg;
+}
+
+public static function setAime($id){
+
+	//$em->update('message', array('id' => $id), array('aime' => 2));
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findOneBy(array('id' => $id));	
+
+	echo json_encode($msg);
+
+	$msg->setAime(); // just change the name
+	//$em->persist($msg);
+	//$em->flush();
+	return $msg;
+
 }
 
 

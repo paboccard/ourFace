@@ -205,6 +205,11 @@ body
     box-shadow:0 2px #cfcfcf;
 }
 
+.btn-group span{
+
+    vertical-align:middle;
+}
+
 .col-md-2.cancel-padding{
 	padding: 0;
 }

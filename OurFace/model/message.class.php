@@ -55,6 +55,10 @@ class message{
 	public function getAime(){
 		return $this->aime;
 	}
+
+	public function setAime(){
+		$this->aime = $this->aime + 1;
+	}
 	
 }
 

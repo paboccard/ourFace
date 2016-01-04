@@ -70,4 +70,16 @@ public static function myWall($request,$context){
 		return context::ERROR;
 }
 
+public static function myWallUpLike($request,$context){
+	if (!empty($request['id'])){
+		$id=$request['id'];
+		if ($msg = messageTable::setAime($id))
+			return context::SUCCESS;
+		else
+			return context::ERROR;
+	}
+	else
+		return context::ERROR;
+}
+
 }

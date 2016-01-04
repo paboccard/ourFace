@@ -1,8 +1,8 @@
 <div class="row area">
-	<form role="form" >
+	<form role="form" action"publier.php" method="post">
 		<div class="form-group">
 			<div class="box">
-			    <textarea id="status" class"form-control" rows="5">Exprimez-vous...</textarea>
+			    <textarea id="status" class"form-control" name="myText" rows="5">Exprimez-vous...</textarea>
 			    <hr/>
 				<div class="btn-group pull-left" role="group">
 					<div class="btn-group">
@@ -11,7 +11,8 @@
 				</div>
 				<div class="btn-group pull-right" role="group">
                 	<div class="btn-group">
-            			<button class="btn btn-msg msg-color-com" type="submit">Publier</button>
+						<input type="submit" name="publier" value="Publier">
+            			<!--<button class="btn btn-msg msg-color-com" type="submit">Publier</button>-->
              		</div>
 		    	</div>
 			</div>
