@@ -1,1 +1,0 @@
-<?php include('wallSuccess.php'); ?>
