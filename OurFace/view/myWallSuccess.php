@@ -1,8 +1,6 @@
 <?php 
 	$user = utilisateurTable::getUserByIdentifiant($context->profile);
-
 	$id = $user->getId();
-
 	$identifiant = $user->getIdentifiant();
 	$name = $user->getNom();
 	$prenom = $user->getPrenom();
@@ -29,15 +27,12 @@
 		<div class="col-lg-offset-3 col-lg-7 col-md-offset-2 col-md-9">
 	<?php 
 		include('exprimerMsg.php');
-
 		if ($msg = messageTable::getMessageByEmetteur($id)){
 			foreach ($msg as $key) { 
 		//for ($i = 1; $i <= 10; $i++) { 
-
 		include('listMessages.php');
 			} 
 		} 
 	?>
-
 	</div>
 </div>
