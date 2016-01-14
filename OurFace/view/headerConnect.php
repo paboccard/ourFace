@@ -1,5 +1,5 @@
-<header>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+<header class"min-height">
+	<nav class="navbar navbar-blue navbar-fixed-top">
 	  <div class="container container_header">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="OurFace.php?action=index">OurFace</a>

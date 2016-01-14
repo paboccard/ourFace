@@ -46,6 +46,15 @@ class context{
 		return  mainController::$action($request,$this);
 		
 	}
+
+	public function executeActionAjax($action,$request){
+		$this->layout="layout";
+		if(!method_exists('jsController',$action))
+		  return false;
+		
+		return  jsController::$action($request,$this);
+		
+	}
 	
 	public function getSessionAttribute($attribute){
 		if(array_key_exists($attribute, $_SESSION))		

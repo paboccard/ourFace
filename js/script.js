@@ -1,10 +1,10 @@
 $(document).ready(function() {
   
-   	$( ".friends" ).click(function()
+   	/*$( ".friends" ).click(function()
 	{
 		var retour = $(this).attr('id');
 		alert(retour);
-	});
+	});*/
 	$("#exit-chat").click(function()
 	{
 		if($("#chat-text").height() <= '35')

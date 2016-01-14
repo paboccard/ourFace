@@ -46,7 +46,7 @@ public static function getAllUsers(){
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
 	$userRepository = $em->getRepository('utilisateur');
-	$post = $userRepository->findAll();	
+	$post = $userRepository->findBy(array(), array('nom' => 'ASC'));	
 	
 	if ($post == false){
 		echo 'Erreur sql';

@@ -4,7 +4,7 @@ body
 {
 	padding:0;
 	background-color: #eee !important;
-	font: normal 14px Roboto,arial,sans-serif !important;
+	font: normal 14px Robot,arial,sans-serif !important;
 
 }
 
@@ -19,33 +19,82 @@ body
 
 }
 
+.min-height: {
+	min-height: 50px;
+}
+
+.scrollable {
+    height: 100%;
+    overflow: auto;
+}
+
+.max-height {
+    height: 100%;
+	/*position: relative;*/
+}
+.cancel-padding{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+.min-padding{
+	padding-top: 50px !important;
+}
+
+/********* HEADER ***********/
 .container_header{
 	padding: 0px !important;
+	min-height: 50px;
 }
+
+.navbar-blue{
+	background-color:#3B5999;
+}
+
+.navbar-blue a:link, .navbar-blue a:visited{
+	color: white
+}
+
+.navbar-blue a:hover{
+	color: #3B5999;
+}
+
+/******** Friend ********/
 
 .listeFriend
 {
-	/*position: relative;
-	float: right;*/
+	min-width: 20%;
 	position: fixed;
-	min-height:100%; 
 	height: 100%;
-	min-width: 20% !important;
-	background-color: #798081;
-	/*z-index: 1;
-	margin-top: -20px;*/
-	/*padding-top: 10px;*/
+	background-color: #393939;
+	/*background-color: #798081;*/
+	/*min-width: 20% !important;
+	min-width: 200px;
+	z-index: 1;*/
 }
 
 .friendPicture
 {
 	position: relative;
 	float: left;
-	margin: 5px 0 0 0px;
+	margin: 0px 0 0 0px;
 	max-width: 30px;
 	left:0px;
 
 }
+
+.img_emetteur{
+	min-width: 50px;
+	min-height: 50px;
+	width: 50px;
+	height: 50px;
+	max-width: 50px;
+	max-height: 50px; 
+  border-radius: 100px;
+  margin-right: 10px;
+  padding: 0 !important;
+}
+}
+
 .friends
 {
 	margin: 10px;
@@ -65,14 +114,69 @@ body
 }
 
 .friendName{
+	margin-top: 0px !important;
 	padding: 0px !important;
 }
+
+/*.friendName a:visited, .friendName a:link{
+	color: white;
+}*/
 
 #search-friend
 {
 	position: fixed;
 	bottom: 0px;
 }
+
+
+
+
+
+
+
+
+
+
+.comment::before, .comment::after {
+    content: " ";
+    display: table;
+}
+.comment::before,.comment::after {
+    content: " ";
+    display: table;
+}
+.comment::after {
+    clear: both;
+}
+.comment::before,.comment::after {
+    content: " ";
+    display: table;
+}
+.comment::after {
+    clear: both;
+}
+.comment::before,.comment::after {
+    content: " ";
+    display: table;
+}
+.comment {
+    margin-bottom: 25px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #333333;
+    font-family: "Roboto",Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+
+
+
+
+
+
+
+/******** CHAT ********/ 
 #chat
 {
 	padding: 0;
@@ -114,6 +218,8 @@ body
 	right: 0px;
 }
 
+
+/******** COMMENT *********/
 .btn-msg{
 	padding: 0;
 	border: none;
@@ -132,16 +238,21 @@ body
 	color : #9278f9;
 }
 
-textarea {
-	resize: none;
-	margin: 0 auto;
+#status {
+	/*resize: none;*/
+	/*margin: 0 auto;*/
 	width:100%;
-	padding-top: 10px;
+	padding-left: 30px;
+	margin-left: 10px;
     /*border-radius: 15px;
     border-color:#d2d2d2;
     /*border-width: 1px;*/
     border : 0px solid white;
     /*box-shadow:0 1px 0 #cfcfcf !important;*/
+}
+
+.separator{
+	margin-bottom: 20px;
 }
 
 .box {
@@ -156,9 +267,27 @@ textarea {
     box-shadow:0 2px #cfcfcf;
 }
 
+.btn-group span{
+
+    vertical-align:middle;
+}
+
 .col-md-2.cancel-padding{
 	padding: 0;
 }
+
+.statut{
+	font-size: 10px;
+	color: #798081;
+	display: inline-block;
+}
+
+.post_texte{
+	padding-top: 30px;
+}
+
+
+/********* PICTURE *********/
 
 #picture-wall
 {
@@ -188,7 +317,8 @@ textarea {
 	height: 200px;
 	padding: 10px;
 }
-footer
+
+.footer-search
 {
 	position: fixed;
 	width: 100%;
@@ -199,25 +329,9 @@ footer
 	padding: 5px;
 }
 
-.scrollable {
-    height: 100%;
-    overflow: auto;
-}
-
-.max-height {
-    height: 100%;
-	/*position: relative;*/
-}
-
 .area{
-	margin-top: 30px;
+	padding-top: 40px;
 }
-
-.cancel-padding{
-	padding: 0px !important;
-	margin: 0px !important;
-}
-
 
 /******** CONNEXION *******/
 .container {

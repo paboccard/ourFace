@@ -1,5 +1,5 @@
 <header>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-blue navbar-fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <a class="navbar-brand" href="#">OurFace</a>

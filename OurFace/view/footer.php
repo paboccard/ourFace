@@ -1,8 +1,8 @@
-<footer class="footer">
-	<div class="container cancel-padding">
-	<div id="chat" class="col-md-offset-8 col-md-3">
+<div class="col-lg-12">
+		<div class="footer-search cancel-padding">
+			<div id="chat" class="col-md-offset-8 col-md-3">
 
-		<div id="chat-text">
+				<div id="chat-text">
 			
 			<div id="text-chat-perso">
 				<?php
@@ -13,11 +13,10 @@
 						echo $value->emetteur->nom.' : '.$value->post->texte.'<br>';
 					}
 				?>
-
 			</div>
 		</div>
 
-		<form class="navbar-form" role="search" action="" method="POST" >
+		<form class="navbar-form pull-right" role="search" action="" method="POST" >
 			<img src="images/croix.png" alt="oui" id="exit-chat" class="img-rounded ">
             <div class="input-group form-group-sm">
 
@@ -34,5 +33,11 @@
         }
         ?>
        	</div>
-	</div>
-</footer>
+       </div>
+
+       	<?php
+		if (isset($_POST['like'])){
+			messageTable::setAime($_POST['idPost']);
+		}
+		?>
+</div>

@@ -8,10 +8,23 @@ class messageTable{
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
 	$msgRepository = $em->getRepository('message');
-	$msg = $msgRepository->findBy(array('emetteur' => $id));	
+	$msg = $msgRepository->findBy(array('id' => $id));	
 	
 	if ($msg == false){
 		echo 'Erreur sql';
+	}
+	return $msg; 
+}
+
+  public static function getMessageByEmetteur($emetteur){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findBy(array('emetteur' => $emetteur), array('id' => 'DESC'));	
+	$msg += $msgRepository->findBy(array('destinataire' => $emetteur), array('id' => 'DESC'));	
+	
+	if ($msg == false){
+		//echo 'Erreur sql';
 	}
 	return $msg; 
 }
@@ -22,13 +35,49 @@ public static function getAllMessage(){
 	//$post = $em->createQuery("select m from message m");
 
 	$msgRepository = $em->getRepository('message');
-	$msg = $msgRepository->findAll();	
+	$msg = $msgRepository->findBy(array(), array('id' => 'DESC'));
+	//$msg = $msgRepository->findAll();
 	
 	if ($msg == false){
 		echo 'Erreur sql';
 	}
 
 	return $msg;
+}
+
+public static function setAime($id){
+
+	//$em->update('message', array('id' => $id), array('aime' => 2));
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findOneBy(array('id' => $id));	
+
+	$msg->setAimePlusOne();
+	//$em->persist($msg);
+	$em->flush();
+	return $msg;
+
+}
+
+public static function publierMessage($message, $emetteur, $destinataire){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$loginEmetteur = utilisateurTable::getUserByIdentifiant($emetteur);
+	$loginDestinataire = utilisateurTable::getUserByIdentifiant($destinataire);
+	$post = new post();
+	$post->setTexte($message);
+	$post->setDate(new DateTime());
+	$post->setImage(null);
+	$newMessage = new message();
+	$newMessage->setEmetteur($loginEmetteur);
+	$newMessage->setDestinataire($loginDestinataire);
+	$newMessage->setParent($loginEmetteur);
+	$newMessage->setPost($post);
+	$newMessage->setAime();
+
+	$em->persist($newMessage);
+	$em->flush($newMessage);
 }
 
 
