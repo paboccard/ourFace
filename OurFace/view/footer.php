@@ -5,36 +5,34 @@
 		<div id="chat-text">
 			
 			<div id="text-chat-perso">
-				Q Araud: Bonjour <br>
-				P.A Boccard: bonjour<br>
-				Q Araud: ca va?<br>
-				P.A Boccard: oui et toi?<br>
-				Q Araud: Bonjour <br>
-				P.A Boccard: bonjour<br>
-				Q Araud: ca va?<br>
-				P.A Boccard: oui et toi?<br>
-				Q Araud: Bonjour <br>
-				P.A Boccard: bonjour<br>
-				Q Araud: ca va?<br>
-				P.A Boccard: oui et toi?<br>
-				Q Araud: Bonjour <br>
-				P.A Boccard: bonjour<br>
-				Q Araud: ca va?<br>
-				P.A Boccard: oui et toi?<br>
+				<?php
+				
+					$msg = chatTable::getChats();
+					
+					foreach ($msg as $key => $value) {
+						echo $value->emetteur->nom.' : '.$value->post->texte.'<br>';
+					}
+				?>
 
 			</div>
 		</div>
 
-		<form class="navbar-form" role="search">
+		<form class="navbar-form" role="search" action="" method="POST" >
 			<img src="images/croix.png" alt="oui" id="exit-chat" class="img-rounded ">
             <div class="input-group form-group-sm">
 
                 <input type="text" class="form-control input-chat" placeholder="Saisir le texte" name="q">
                 <div class="input-group-btn">
-                    <button class="btn btn-default btn-sm" type="submit"><i class="glyphicon glyphicon-send"></i></button>
+                    <button name="valmessage" class="btn btn-default btn-sm" type="submit"><i class="glyphicon glyphicon-send"></i></button>
                 </div>
             </div>
         </form>
+        <?php
+        if(isset($_POST['valmessage']))
+        {
+        	chatTable::setChats($_POST['q']);
+        }
+        ?>
        	</div>
 	</div>
 </footer>

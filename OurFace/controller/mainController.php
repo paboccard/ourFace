@@ -35,6 +35,7 @@ public static function login($request,$context){
 		try{
 			if ($login = utilisateurTable::getUserByLoginAndPass($_POST['pseudo'],$_POST['pass'])){
 				$_SESSION['pseudo'] = $_POST['pseudo'];
+				$_SESSION['mdp'] = $_POST['pass'];
 				return context::SUCCESS;
 			}
 			else 

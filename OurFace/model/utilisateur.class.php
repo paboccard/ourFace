@@ -63,6 +63,9 @@ class utilisateur{
 	public function getAvatar(){
 		return $this->avatar;
 	}
+	public function setAvatar($image){
+		$this->avatar = $image;
+	}
 
 	public function getDateDeNaissance(){
 		return $this->date_de_naissance;
