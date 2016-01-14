@@ -63,6 +63,9 @@ class message{
     }
 
     public function setAime(){
+        $this->aime = 0;
+    }
+    public function setAimePlusOne(){
         $this->aime++;
     }
 

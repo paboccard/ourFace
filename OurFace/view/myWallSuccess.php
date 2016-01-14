@@ -13,7 +13,7 @@
 	<div  class="row area">
 		<div id="picture-wall" class="col-md-offset-1 col-md-2">
 			<button id="change-picture" class="btn btn-default btn-sm" type="submit"><i class="glyphicon glyphicon-wrench"></i></button>
-			<img src="images/test.jpg" alt="oui" class="img-rounded pictureWall" >
+			<img src=<?php echo "\"".$avatar."\"" ;?> alt="oui" class="img-rounded pictureWall" >
 		</div>
 		<div id="name-wall" class=" col-md-offset-1 col-md-5">
 

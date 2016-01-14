@@ -53,7 +53,7 @@ public static function setAime($id){
 	$msgRepository = $em->getRepository('message');
 	$msg = $msgRepository->findOneBy(array('id' => $id));	
 
-	$msg->setAime();
+	$msg->setAimePlusOne();
 	//$em->persist($msg);
 	$em->flush();
 	return $msg;
@@ -74,7 +74,7 @@ public static function publierMessage($message, $emetteur, $destinataire){
 	$newMessage->setDestinataire($loginDestinataire);
 	$newMessage->setParent($loginEmetteur);
 	$newMessage->setPost($post);
-	$newMessage->setAime(-1);
+	$newMessage->setAime();
 
 	$em->persist($newMessage);
 	$em->flush($newMessage);

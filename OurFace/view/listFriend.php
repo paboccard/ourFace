@@ -8,10 +8,15 @@
 
 		<div class="row">
 			<div id="friend" class="friends">
-				<img src="images/test.jpg" alt="oui" class="img-rounded friendPicture">
+				<?php if (strpos($key->avatar, "pedago") !== false){ ?>
+				<img src=<?php echo "\"".$key->avatar."\"" ;?>  alt="oui" class="img-rounded friendPicture">
+				<?php } else{ ?>
+				<img src="images/noFace.jpg" alt="oui" class="img-rounded friendPicture"/>
+				<?php 
+				} ?>
 				<span class="friendName col-lg-10">
 						<?php echo ("<a href=\"OurFace.php?action=myWall&profile=".$key->getIdentifiant()."\">");
-						echo $key->getIdentifiant() ; 
+						echo $key->prenom.' '.$key->nom ; 
 						echo ('</a>');
 						?>
 				</span>
