@@ -142,30 +142,26 @@ $(document).ready(function() {
   	{
   		$(".listeFriend").animate({width: '30'},300);
    	})
+
 	$("#exit-chat").click(function()
 	{
-		
-		
-		if($("#chat-text").height() <= '105')
+		if($("#chat-text").height() <= '35')
 		{
-			$("#chat-text").animate({height: '330',marginTop: '-282'},300);
-			$("#text-chat-perso").animate({height: '82%'},300);
-
+			$("#chat-text").animate({height: '300',marginTop: '-300'},300);
 
 		}else
 		{
-			$("#chat-text").animate({height: '80',marginTop: '-32'},300);
-			$("#text-chat-perso").animate({height: '20%'},300);
+			$("#chat-text").animate({height: '25',marginTop: '-25'},300);
 		}
 		
-	});
+	})
 	$( "#picture-wall" ).mouseover(function() {
 		 $("#change-picture").stop();
 	    	$("#change-picture").show();
 	  }).mouseout(function() {
 	  	$("#change-picture").stop();
    		 $("#change-picture").hide();
-  		});
+  });
 	
 	$( "#picture-wall" ).mouseover(function() {
 		 $("#change-picture").stop();
@@ -174,54 +170,142 @@ $(document).ready(function() {
 	  	$("#change-picture").stop();
    		 $("#change-picture").hide();
   });
-	 $(".btn-chat").click(function()
-	{
-		console.log($("#q").val());
-		//$.POST('OurFaceAjax.php?action=addMessage',{'message':$("#q").val()});
-		$.ajax(
-			{
-				type: "POST",
-				url: "OurFaceAjax.php?action=addMessage",
-				data:{
-					'message': $('#q').val()
-				}
-			}
-			)
-			.done( 
-			function(request)
-			{
-				console.log(request);
-				document.getElementById('q').value = '';
 
-				//$("#text-chat-perso").html(request);
+  $(".btn_like").click(function(){
+  	var $this = $(this);
+  	$.ajax(
+		{
+			type: "POST",
+			url: "OurFaceAjax.php?action=addLike",
+			data:{ 
+				'id': $(this).attr('id')
 			}
-			);
-		//chatTable::setChats($("#q").val());*/
-		
+		}
+		)
+		.done( 
+		function(data)
+		{
+			$("#"+$this.attr('id')).html('<span class="glyphicon glyphicon-thumbs-up"></span> J\'aime ' + data.slice(0, data.indexOf("<")));
+		}
+		);
 	});
 
-var myVar = setInterval(function(){ myTimer() }, 2000);
+  $("#btn_login").click(function(){
+  	$.ajax({
+  		type:"POST",
+  		url: "OurFaceAjax.php?action=login",
+  		data:{
+  			'pseudo': $("input[name='pseudo']").val(),
+  			'pass': $("input[name='pass']").val()
+  		}
+  	})
+  	.done(function(data){
+  		console.log(data);
+  		$(".template").html(data);
+  	});
+  });
 
-function myTimer() {
-	
-   $.ajax(
-			{
-				type: "POST",
-				url: "OurFaceAjax.php?action=rafraichirChat"
-			}
-			)
-			.done( 
-			function(request)
-			{
-				
-				$("#text-chat-perso").html(request);
-				element = document.getElementById('text-chat-perso');
-				element.scrollTop = element.scrollHeight;
-				//$("#text-chat-perso").scrollTop() = $("#text-chat-perso").height();
+  /** click on Button publier in exprimerMsg.php **/
+  $("#btn_publier").click(function(){
+  	$.ajax({
+  		type:"POST",
+  		url: "OurFaceAjax.php?action=myWall",
+  		data:{
+  			'message' : $("#status").val(),
+  			'emetteur' : $("#id_emetteur").text(),
+  			'destinataire' : $("#identifiant").text().split(" ")[2]
+  		}
+  	})
+  	.done(function(data){
+  		console.log(data);
+  		$(".template").html(data);
+  	});
+  });
 
+
+	var tmppath;
+	$('#parcourir').change( function(event) {
+    	tmppath = URL.createObjectURL(event.target.files[0]);
+    	$("#img_picture").fadeIn("fast").attr('src',URL.createObjectURL(event.target.files[0]));
+    	console.log(tmppath);
+    	$("#disp_tmp_path").html("Temporary Path(Copy it and try pasting it in browser address bar) --> <strong>["+tmppath+"]</strong>");
+		if (tmppath != "" || tmppath != null){
+			$("#btn_photo").prop('disabled', false);
+		}
+	});
+
+
+  $("#btn_photo").click(function(){
+
+  	console.log(document.getElementById('parcourir').value);
+
+  	console.log($("#parcourir").val());
+  	console.log(tmppath);
+  	$.ajax({
+  		type:"POST",
+  		url: "OurFaceAjax.php?action=changePhoto",
+  		data:{
+  			'id' : $("#identifiant").text().split(" ")[2],
+  			'image' : tmppath
+  		}
+  	})
+  	.done(function(data){
+  		console.log(data);
+  		$("#btn_photo").prop('disabled', true);
+  	});
+  });
+
+  $("#btn_mofStatut").click(function(){
+  		$("#statut").show();
+  		$("#btn_annuler").show();
+  		if ($("#btn_mofStatut").val() == "Valider"){
+  			console.log("bonjour");
+	   		$.ajax({
+				type:"POST",
+				url: "OurFaceAjax.php?action=changeStatut",
+				data:{
+					'id' : $("#identifiant").text().split(" ")[2],
+  					'statut' : $("#statut").val()
+				}
+			})
+			.done(function(data){
+				$("#txt_statut").html("Statut : " + $("#statut").val());
+				$("#statut").hide();
+				$("#btn_annuler").hide();
+				$("#btn_mofStatut").val("Modifier");
+			});
+  		}
+  		$("#btn_mofStatut").val("Valider");
+
+  });
+
+  /*$("#btn_annuler").click(function(){
+		if ($("#btn_mofStatut").val() == "Modifier"){
+			$("#statut").hide();
+			$("#btn_annuler").hide();
+			$("#btn_mofStatut").val("Modifier");
+		}
+  }*/
+  
+
+  	$(window).scroll(function() {
+  		var scrollTopTmp = $(window).scrollTop();
+   			if($(window).scrollTop() + $(window).height() > $(document).height()) {
+			$(window).scrollTop(scrollTopTmp);
+			nbMsg += 10;
+   			console.log(nbMsg);
+   			$.ajax({
+				type:"POST",
+				url: "OurFaceAjax.php?action=wall",
+				data:{
+					'nb': nbMsg
+				}
+			})
+			.done(function(data){
+				$(".template").html(data);
+			});
 			}
-			);
-}
+	});
 
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars()

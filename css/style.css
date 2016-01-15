@@ -82,7 +82,6 @@ body
 	position: relative;
 	float: left;
 	margin: 0px 0 0 0px;
-	height: 30px;
 	max-width: 30px;
 	left:0px;
 
@@ -189,44 +188,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	border: 0px solid black;
 	height: 400px !important;
 }
-#titre-chat
-{
-	
-	width: 100%;
-	height: 30px;
-	background-color: #393939;
-	color:white;
-	padding: 5px;
-	text-align: center;
-}
-.send-message
-{
-	position: absolute;
-	bottom: 0;
-	background-color: white;
-	border-top: 1px solid #393939;
-}
-#exit-chat
-{
-	position: absolute;
-	right: 5px;
-}
 #chat-text
 {
-	margin-top: -282px;
+	margin-top: -300px;
 	position: relative;
 	border: 1px solid #798081;
-	height: 330px;
+	height: 300px;
 	background-color: white;
-	-moz-box-shadow: 1px 0px 5px 0px #656565;
--webkit-box-shadow: 1px 0px 5px 0px #656565;
--o-box-shadow: 1px 0px 5px 0px #656565;
-box-shadow: 1px 0px 5px 0px #656565;
-filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=5);
 }
 #text-chat-perso
 {
-	height: 82%;
+	height: 100%;
 	overflow: scroll;
 	padding: 5px;
 }
@@ -346,8 +318,8 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Str
 }
 #name-wall
 {
-	background-color: white;
-	height: 162px;
+	background-color: transparent;
+	height: 200px;
 	padding: 10px;
 }
 
