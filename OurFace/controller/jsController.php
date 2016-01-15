@@ -2,31 +2,26 @@
 
 class jsController{
 
-	public static function addLike($request, $context){
-		// get the response parameter from URL
-		$response = $_REQUEST["response"];
-
-		$hint = "";
-
-		// lookup all hints from array if $q is different from ""
-		if ($resopnse !== "") {
-		
-		}
-			
+	public static function rafraichirChat($request,$context){
+		$msg = chatTable::getChats();
+		$reversed = array_reverse($msg);
+					foreach ($msg as $key => $value) {
+					$new = htmlspecialchars($value->post->texte);
+				echo $value->emetteur->nom.' '.$value->emetteur->prenom.' dit: <br>	'.$new.'<br>';
+		}  
+		return context::NONE;
 	}
+	public static function addMessage($request,$context){
 
-	public static function myWall($request,$context){
-		
-		if (!empty($request['profile'])){
-			$context->profile=$request['profile'];
-			if ($msg = utilisateurTable::getUserByIdentifiant($context->profile))
-				return context::SUCCESS;
-			else
-				return context::ERROR;
-		}
-		else
-			return context::ERROR;
+
+		if(!empty($_POST['message']))
+		{
+			chatTable::setChats($_POST['message']);
+		} 
+		 
+		return context::NONE;
 	}
+}
 
 
 ?>

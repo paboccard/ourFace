@@ -22,8 +22,7 @@
 					<input name="parcourirPhoto1" type="file" id="parcourir"/>
 					<input name="valAlbum" type="submit" value="Valider"/>
 		</form>
-	<div id="name-wall" class=" col-md-offset-1 col-md-5">
-
+	<div id="name-wall" class=" col-md-offset-1 col-md-7">
 		Idenfitiant : <?php echo $identifiant ; ?> <br>
 		Nom : <?= $name ?><br>
 		Prénom : <?=$prenom?><br>
@@ -50,4 +49,5 @@
 				}
 			
 		?>
+</div>
 </div>

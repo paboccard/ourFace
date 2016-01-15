@@ -1,15 +1,16 @@
 <div id="" class="listeFriend" > 
 <!-- class="col-md-offset-10 col-md-3 cancel-padding" -->
 	<div class="scrollable">
+	<div id="moveFriend" class="glyphicon glyphicon-chevron-right"></div>
 	<?php 
 		if ($msg = utilisateurTable::getAllUsers()){
 			foreach ($msg as $key) { 
 		?> 
 
-		<div class="row">
+		<div class="row list">
 			<div id="friend" class="friends">
 				<?php if (strpos($key->avatar, "pedago") !== false){ ?>
-				<img src=<?php echo "\"".$key->avatar."\"" ;?>  alt="oui" class="img-rounded friendPicture">
+				<img src="<?= $key->avatar ;?>" class="img-rounded friendPicture">
 				<?php } else{ ?>
 				<img src="images/noFace.jpg" alt="oui" class="img-rounded friendPicture"/>
 				<?php 
@@ -22,6 +23,7 @@
 				</span>
 			</div>
 		</div>
+
 
 	<?php 
 		}
