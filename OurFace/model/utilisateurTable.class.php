@@ -58,6 +58,8 @@ public static function Avatar($name, $type, $size, $tmp_name, $error)
 	
 
 		if ($error > 0) $erreur = "Erreur lors du transfert";
+	
+		if ($size > $maxsize) $erreur = "Le fichier est trop gros";
 		
 		$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 			
@@ -65,6 +67,7 @@ public static function Avatar($name, $type, $size, $tmp_name, $error)
 		if ( in_array($extension_upload,$extensions_valides) ) echo "Extension correcte";
 		
 		$image_sizes = getimagesize($tmp_name);
+		if ($image_sizes[0] > $maxwidth OR $image_sizes[1] > $maxheight) $erreur = "Image trop grande";
   		$nom = "https://pedago02a.univ-avignon.fr/~uapv1104001/ourFace/images/";
   		$nom .= $name;
 		
@@ -75,6 +78,20 @@ public static function Avatar($name, $type, $size, $tmp_name, $error)
 		$login->setAvatar($nom);
 		$em->flush();
 }
+
+public static function changeStatut($identifiant, $statut){
+		$em = dbconnection::getInstance()->getEntityManager() ;
+
+		$msgRepository = $em->getRepository('utilisateur');
+		$msg = $msgRepository->findOneBy(array('identifiant' => $identifiant));	
+
+		if ($msg == false){
+			echo 'Erreur sql changeStatut utilisateurTable';
+		}
+
+		$msg->changeStatut($statut);
+		$em->flush();
+	}
 		
 		
 }

@@ -2,8 +2,8 @@
 	
 
 	<?php 
-	include('exprimerMsg.php');
-	if (($msg = messageTable::getAllMessage()) != null){
+	//include('exprimerMsg.php');
+	if (($msg = messageTable::getMessageNumber(10)) != null){
 		foreach ($msg as $key) { 
 	//for ($i = 1; $i <= 10; $i++) { 
 		include('listMessages.php');

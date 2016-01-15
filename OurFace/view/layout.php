@@ -37,7 +37,9 @@
 
 	<?php }?>
 
+			<div class="template">
 			<?php include($template_view); ?>
+			</div>
 			<?php 
 			if (isset($_SESSION['pseudo']))
 			include('footer.php'); ?>

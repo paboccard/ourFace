@@ -13,22 +13,30 @@
 
 <div>
 	<div  class="row area">
+		<div class="col-lg-12">
 		<div id="picture-wall" class="col-md-offset-1 col-md-2">
 			<button id="change-picture" class="btn btn-default btn-sm" type="submit"><i class="glyphicon glyphicon-wrench"></i></button>
 			<img src=<?php echo "\"".$avatar."\"" ;?> alt="oui" class="img-rounded pictureWall" >
 		</div>
+		<div class="col-lg-2">
 		<form name="formTextAlbum" action="" method="POST" enctype="multipart/form-data">
 		
 					<input name="parcourirPhoto1" type="file" id="parcourir"/>
 					<input name="valAlbum" type="submit" value="Valider"/>
 		</form>
-	<div id="name-wall" class=" col-md-offset-1 col-md-7">
-		Idenfitiant : <?php echo $identifiant ; ?> <br>
-		Nom : <?= $name ?><br>
-		Prénom : <?=$prenom?><br>
-		Né le : <?= date_format($dateDeNaissance, 'Y-m-d') ?> <br>
-		<?= $avatar ?>
-	</div>
+		</div>
+		<div id="name-wall" class=" col-md-offset-1 col-md-5">
+
+			<div class="row" id="identifiant">Idenfitiant : <?php echo $identifiant ; ?> </div>
+			<div class="row">Nom : <?= $name ?></div>
+			<div class="row">Prénom : <?=$prenom?></div>
+			<div class="row">Né le : <?= date_format($dateDeNaissance, 'Y-m-d') ?> </div>
+			<div class="row" id="txt_statut">Statut : <?= $statut; ?> 
+				<input type="text" id="statut" name="statut" class="form-control col-lg-8" placeholder="<?= $statut; ?>" />
+				<input type="button" id="btn_mofStatut" value="Modifier"/>
+			</div>
+		</div>
+		</div>
 		<hr/>
 
 		<div class="col-lg-offset-3 col-lg-7 col-md-offset-2 col-md-9">

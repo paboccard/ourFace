@@ -20,7 +20,7 @@
 	        <li>
 	        	<?php echo ("<a href=\"OurFace.php?action=myWall&profile=".$_SESSION['pseudo']."\">");?> <!-- on link avec le pseudo -->
 				<span class="glyphicon glyphicon-user"></span> 
-				<?php echo $_SESSION['pseudo'] ; ?> <!-- on ecrit le pseudo à côté de l'icône home -->
+				<?php echo '<span id="id_emetteur">'.$_SESSION['pseudo'].'</span>' ; ?> <!-- on ecrit le pseudo à côté de l'icône home -->
 				</a>
 			</li>
 	        <li><a href="OurFace.php?action=callLogin"><span class="glyphicon glyphicon-log-in"></span> Deconnexion</a></li>

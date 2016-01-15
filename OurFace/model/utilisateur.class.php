@@ -70,6 +70,10 @@ class utilisateur{
     public function getDateDeNaissance(){
         return $this->date_de_naissance;
     }
+
+    public function changeStatut($statut){
+        $this->statut = $statut;
+    }
 }
 
 ?>

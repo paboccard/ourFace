@@ -31,7 +31,7 @@
 	?>
 	</div>
 
-	<div id="search-friend" class="row">
+	<!--<div id="search-friend" class="row">
 		<div class"col-md-12 col-lg-12">		
 			<form class="navbar-form cancel-padding" role="search">
 		        <div class="input-group form-group-sm">
@@ -42,5 +42,5 @@
 		        </div>
 		    </form>
         </div>
-	</div>
+	</div>-->
 </div>

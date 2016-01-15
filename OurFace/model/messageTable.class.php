@@ -20,13 +20,64 @@ class messageTable{
 	$em = dbconnection::getInstance()->getEntityManager() ;
 
 	$msgRepository = $em->getRepository('message');
+
 	$msg = $msgRepository->findBy(array('emetteur' => $emetteur), array('id' => 'DESC'));	
-	$msg += $msgRepository->findBy(array('destinataire' => $emetteur), array('id' => 'DESC'));	
-	
+	$msg2 = $msgRepository->findBy(array('destinataire' => $emetteur), array('id' => 'DESC'));
+
+	foreach ($msg2 as $key) {
+		$isPresent = false;
+		foreach ($msg as $value) {
+			if ($value->id == $key->id){
+				$isPresent = true;
+			}
+		}
+		if (!$isPresent)
+			array_push($msg,$key);
+		
+	}
+
+	usort($msg, function($a, $b) {
+		if ($a->post != null && $b->post != null)
+	  		return ($a->post->date > $b->post->date) ? -1 : 1;
+	});	
 	if ($msg == false){
 		//echo 'Erreur sql';
 	}
-	return $msg; 
+	return $msg;
+	//return array_slice($msg, 0, 10); ; 
+}
+
+  public static function getMessageByEmetteurWithNumber($identifiant,$nb){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	$msgRepostitoryUser = $em->getRepository('user');
+	$idUser = utilisateurTable::getUserByIdentifiant($identifiant)->id;
+
+	$msgRepository = $em->getRepository('message');
+
+	$msg = $msgRepository->findBy(array('emetteur' => $idUser), array('id' => 'DESC'));	
+	$msg2 = $msgRepository->findBy(array('destinataire' => $idUser), array('id' => 'DESC'));
+
+	foreach ($msg2 as $key) {
+		$isPresent = false;
+		foreach ($msg as $value) {
+			if ($value->id == $key->id){
+				$isPresent = true;
+			}
+		}
+		if (!$isPresent)
+			array_push($msg,$key);
+		
+	}
+
+	usort($msg, function($a, $b) {
+  		return ($a->post->date > $b->post->date) ? -1 : 1;
+	});	
+	if ($msg == false){
+		//echo 'Erreur sql';
+	}
+	//return $msg;
+	return array_slice($msg, 0, $nb); 
 }
 
 public static function getAllMessage(){
@@ -45,6 +96,21 @@ public static function getAllMessage(){
 	return $msg;
 }
 
+public static function getMessageNumber($number){
+	$em = dbconnection::getInstance()->getEntityManager() ;
+
+	//$post = $em->createQuery("select m from message m");
+
+	$msgRepository = $em->getRepository('message');
+	$msg = $msgRepository->findBy(array(), array('id' => 'DESC'), $number, 0);
+	//$msg = $msgRepository->findAll();
+	if ($msg == false){
+		echo 'Erreur sql on getMessageNumber';
+	}
+
+	return $msg;
+}
+
 public static function setAime($id){
 
 	//$em->update('message', array('id' => $id), array('aime' => 2));
@@ -56,7 +122,7 @@ public static function setAime($id){
 	$msg->setAimePlusOne();
 	//$em->persist($msg);
 	$em->flush();
-	return $msg;
+	return $msg->aime;
 
 }
 
